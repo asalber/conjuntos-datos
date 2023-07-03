@@ -1,0 +1,314 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  a4paper,
+]{scrreport}
+
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else  
+    % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{5}
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{venndiagram}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\DeclareMathOperator{\operatorname{Int}}{Int}
+\DeclareMathOperator{\operatorname{Ext}}{Ext}
+\DeclareMathOperator{\operatorname{Fr}}{Fr}
+\DeclareMathOperator{\Adh}{Adh}
+\DeclareMathOperator{\Ac}{Ac}
+\DeclareMathOperator{\sen}{sen}
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Tabla de contenidos}
+\else
+  \newcommand\contentsname{Tabla de contenidos}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Listado de Figuras}
+\else
+  \newcommand\listfigurename{Listado de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Listado de Tablas}
+\else
+  \newcommand\listtablename{Listado de Tablas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabla}
+\else
+  \newcommand\tablename{Tabla}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listado}
+\newcommand*\listoflistings{\listof{codelisting}{Listado de Listados}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\makeatother
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{spanish}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Repositorio de conjuntos de datos},
+  pdfauthor={Alfredo Sánchez Alberca},
+  pdflang={es},
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Repositorio de conjuntos de datos}
+\author{Alfredo Sánchez Alberca}
+\date{2022-01-06}
+
+\begin{document}
+\begin{titlepage}
+
+%\AddToShipoutPicture*{\put(0,0){\includegraphics[scale=0.8]{img/background2}}} % Imagen de fondo, requiere el paquete eso-pic.
+\begin{center}
+\vspace*{5cm}
+
+\Huge
+{\textbf{\textsf{Repositorio de conjuntos de datos}}}
+
+\vspace{0.5cm}
+\LARGE
+{\textbf{\textsf{}}}
+
+\vspace{1.5cm}
+
+\includegraphics[width=0.4\textwidth]{img/logos/sticker.png}
+\end{center}
+
+\vfill
+
+\begin{flushleft}
+\begin{tabular}{ll}
+\includegraphics[width=0.1\textwidth]{img/logos/aprendeconalf.png} & \parbox[b]{5cm}{\Large\textsf{Alfredo
+Sánchez
+Alberca}\\ \textsf{asalber@ceu.es} \\ \textsf{https://aprendeconalf.es}}
+\end{tabular}
+\end{flushleft}
+\end{titlepage}\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, enhanced, frame hidden, interior hidden, borderline west={3pt}{0pt}{shadecolor}, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Tabla de contenidos}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+\bookmarksetup{startatroot}
+
+\hypertarget{prefacio}{%
+\chapter*{Prefacio}\label{prefacio}}
+\addcontentsline{toc}{chapter}{Prefacio}
+
+\markboth{Prefacio}{Prefacio}
+
+¡Bienvenido al repositorio de Conjuntos de Datos!
+
+Este repositorio contiene una selección de conjuntos de datos útiles
+para realizar trabajos de Análisis de Datos.
+
+Los conjuntos de datos son de acceso público y se incluye una
+descripción de cada conjunto de datos, el formato en el que está
+guardado, así como las principales técnicas de análisis de datos que
+pueden realizarse con él.
+
+\hypertarget{licencia}{%
+\section*{Licencia}\label{licencia}}
+\addcontentsline{toc}{section}{Licencia}
+
+\markright{Licencia}
+
+Esta obra está bajo una licencia Reconocimiento -- No comercial --
+Compartir bajo la misma licencia 3.0 España de Creative Commons. Para
+ver una copia de esta licencia, visite
+\url{https://creativecommons.org/licenses/by-nc-sa/3.0/es/}.
+
+Con esta licencia eres libre de:
+
+\begin{itemize}
+\tightlist
+\item
+  Copiar, distribuir y mostrar este trabajo.
+\item
+  Realizar modificaciones de este trabajo.
+\end{itemize}
+
+Bajo las siguientes condiciones:
+
+\begin{itemize}
+\item
+  \textbf{Reconocimiento}. Debe reconocer los créditos de la obra de la
+  manera especificada por el autor o el licenciador (pero no de una
+  manera que sugiera que tiene su apoyo o apoyan el uso que hace de su
+  obra).
+\item
+  \textbf{No comercial}. No puede utilizar esta obra para fines
+  comerciales.
+\item
+  \textbf{Compartir bajo la misma licencia}. Si altera o transforma esta
+  obra, o genera una obra derivada, sólo puede distribuir la obra
+  generada bajo una licencia idéntica a ésta.
+\end{itemize}
+
+Al reutilizar o distribuir la obra, tiene que dejar bien claro los
+términos de la licencia de esta obra.
+
+Estas condiciones pueden no aplicarse si se obtiene el permiso del
+titular de los derechos de autor.
+
+Nada en esta licencia menoscaba o restringe los derechos morales del
+autor.
+
+\bookmarksetup{startatroot}
+
+\hypertarget{livwell}{%
+\chapter{LivWell}\label{livwell}}
+
+\href{datos/livwell.csv}{\faIcon{file-csv}}
+
+\hypertarget{descripciuxf3n}{%
+\section{Descripción}\label{descripciuxf3n}}
+
+Conjunto de datos sobre las condiciones de vida de mujeres de 52 países
+en vías de desarrollo.
+
+\href{https://www.nature.com/articles/s41597-022-01824-2}{Más
+información}.
+
+\hypertarget{formato-csv.}{%
+\section{\texorpdfstring{Formato:
+\texttt{csv}.}{Formato: csv.}}\label{formato-csv.}}
+
+\hypertarget{tuxe9cnicas-de-anuxe1lisis-de-datos}{%
+\section{Técnicas de análisis de
+datos}\label{tuxe9cnicas-de-anuxe1lisis-de-datos}}
+
+\begin{itemize}
+\tightlist
+\item
+  Estadística descriptiva
+\item
+  Estadística inferencial
+\end{itemize}
+
+
+
+\end{document}

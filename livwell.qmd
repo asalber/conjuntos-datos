@@ -1,0 +1,22 @@
+---
+title: LivWell
+lang: es
+tags: 
+  - csv
+---
+
+[{{< fa file-csv  size=xl >}}](datos/livwell.csv)
+
+## Descripción
+
+Conjunto de datos sobre las condiciones de vida de mujeres de 52 países en vías de desarrollo.
+
+[Más información](https://www.nature.com/articles/s41597-022-01824-2).
+
+## Formato: `csv`.
+
+## Técnicas de análisis de datos
+
+- Estadística descriptiva
+- Estadística inferencial
+
